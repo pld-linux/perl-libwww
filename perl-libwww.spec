@@ -2,14 +2,15 @@
 Summary:	Perl LIBWWW module
 Summary(pl):	Modu³ perla LIBWWW
 Name:		perl-libwww
-Version:	5.47
-Release:	2
+Version:	5.48
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
+Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	libwww-perl-%{version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-18
-BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl >= 5.6
 %requires_eq    perl
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-HTML-Format
@@ -37,26 +38,21 @@ do WWW (World-Wide Web).
 
 %build
 perl Makefile.PL
-%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
+%{__make} OPTIMIZE="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-(  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/libwww-perl/
-   sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-   mv -f .packlist.new .packlist
-)
-      
-gzip -9nf README TODO $RPM_BUILD_ROOT%{_mandir}/man{1,3}/*
+gzip -9nf README TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README,TODO}.gz
+%doc *.gz
 %{perl_sitelib}/*.pm
 %{perl_sitelib}/*.pod
 %{perl_sitelib}/Bundle/*
@@ -65,7 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/HTTP/*
 %{perl_sitelib}/LWP
 %{perl_sitelib}/WWW
-%{perl_sitearch}/auto/libwww-perl
 %attr(755,root,root) %{_bindir}/*
-
 %{_mandir}/man*/*
