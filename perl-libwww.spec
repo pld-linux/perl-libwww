@@ -36,7 +36,7 @@ do WWW (World-Wide Web).
 %patch0 -p1
 
 %build
-perl Makefile.PL
+perl Makefile.PL </dev/null
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
