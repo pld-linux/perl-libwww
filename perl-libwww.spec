@@ -9,6 +9,7 @@ Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
+Patch0:		%{name}-Digest-MD5.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Digest-MD5
@@ -31,6 +32,7 @@ do WWW (World-Wide Web).
 
 %prep
 %setup -q -n libwww-perl-%{version}
+%patch0 -p1
 
 %build
 perl Makefile.PL
