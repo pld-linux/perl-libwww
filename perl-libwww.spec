@@ -3,7 +3,7 @@ Summary:	Perl LIBWWW module
 Summary(pl):	Modu³ perla LIBWWW
 Name:		perl-libwww
 Version:	5.50
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
@@ -14,6 +14,7 @@ BuildRequires:	perl >= 5.6
 %requires_eq    perl
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-HTML-Format
+BuildRequires:	perl-HTTP-GHTTP
 BuildRequires:	perl-HTML-Parser
 BuildRequires:	perl-HTML-Tree
 BuildRequires:	perl-MIME-Base64
