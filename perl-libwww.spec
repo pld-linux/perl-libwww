@@ -47,7 +47,7 @@ na implementacjê prostego serwera HTTP.
 %setup -q -n libwww-perl-%{version}
 
 %build
-perl Makefile.PL </dev/null
+%{__perl} Makefile.PL </dev/null
 %{__make}
 
 %{?_with_tests:%{__make} test}
