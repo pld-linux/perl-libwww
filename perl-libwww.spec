@@ -2,7 +2,7 @@
 Summary:	Perl LIBWWW module
 Summary(pl):	Modu³ perla LIBWWW
 Name:		perl-libwww
-Version:	5.49
+Version:	5.50
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
