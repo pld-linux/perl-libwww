@@ -8,7 +8,7 @@ Group:		Utilities/Text
 Copyright:	Free
 Summary:	Perl LIBWWW module
 BuildRoot:	/tmp/%{name}-%{version}-root
-BuildPreReq:	perl
+BuildRequires:	perl
 %requires_eq	perl
 Requires:	perl-HTML-Parser, perl-MIME-Base64, perl-MD5, perl-libnet, perl-Data-Dumper
 
