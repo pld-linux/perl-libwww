@@ -2,7 +2,7 @@
 
 Name:		perl-libwww
 Version:	5.44
-Release:	2
+Release:	3
 Vendor:		Mailing List <libwww-perl@ics.uci.edu>
 Source:         libwww-perl-%{version}.tar.gz
 Group:		Utilities/Text
