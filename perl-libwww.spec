@@ -10,7 +10,7 @@ Copyright:	Free
 Summary:	Perl LIBWWW module
 Summary(pl):	Modu³ perla LIBWWW
 BuildRoot:	/tmp/%{name}-%{version}-root
-BuildRequires:	perl >= 5.005_61
+BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-HTML-Parser
 Requires:	perl
