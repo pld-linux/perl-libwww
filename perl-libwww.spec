@@ -58,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/File/*
 %{perl_sitelib}/HTML/*
 %{perl_sitelib}/HTTP/*
+%{perl_sitelib}/Net/*
 %{perl_sitelib}/LWP
 %{perl_sitelib}/WWW
 %attr(755,root,root) %{_bindir}/*
