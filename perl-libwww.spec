@@ -2,8 +2,8 @@
 Summary:	Perl LIBWWW module
 Summary(pl):	Modu³ perla LIBWWW
 Name:		perl-libwww
-Version:	5.63
-Release:	2
+Version:	5.64
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(cs):	Vývojové prostøedky/Programovací jazyky/Perl
@@ -16,6 +16,7 @@ Group(pt):	Desenvolvimento/Linguagens/Perl
 Group(ru):	òÁÚÒÁÂÏÔËÁ/ñÚÙËÉ/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-18
+BuildRequires:  perl(Net::FTP) >= 2.58
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-HTML-Parser
@@ -52,13 +53,14 @@ rm -rf $RPM_BUILD_ROOT
 gzip -9nf README TODO
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc *.gz
 %{perl_sitelib}/*.pm
 %{perl_sitelib}/*.pod
+%{perl_sitelib}/Bundle/*
 %{perl_sitelib}/File/*
 %{perl_sitelib}/HTML/*
 %{perl_sitelib}/HTTP/*
@@ -67,4 +69,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/WWW
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{_mandir}/man3/[FHLWl]*
+%{_mandir}/man3/*
