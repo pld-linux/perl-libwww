@@ -20,7 +20,7 @@ Summary(uk):	Модуль для Perl LIBWWW
 Summary(zh_CN):	LIBWWW Perl дё©И
 Name:		perl-libwww
 Version:	5.65
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
@@ -66,14 +66,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README TODO
 %{perl_sitelib}/*.pm
-%{perl_sitelib}/*.pod
-%{perl_sitelib}/Bundle/*
 %{perl_sitelib}/File/*
 %{perl_sitelib}/HTML/*
 %{perl_sitelib}/HTTP/*
 %{perl_sitelib}/Net/*
 %{perl_sitelib}/LWP
-%{perl_sitelib}/WWW
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/man3/*
