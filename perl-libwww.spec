@@ -1,12 +1,29 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	Perl LIBWWW module
-Summary(pl):	Modu³ perla LIBWWW
+%define		pdir	WWW
+%define		pnam	libwww-perl
+Summary:	LIBWWW Perl module
+Summary(cs):	Modul LIBWWW pro Perl
+Summary(da):	Perlmodul LIBWWW
+Summary(de):	LIBWWW Perl Modul
+Summary(es):	Módulo de Perl LIBWWW
+Summary(fr):	Module Perl LIBWWW
+Summary(it):	Modulo di Perl LIBWWW
+Summary(ja):	LIBWWW Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	LIBWWW ÆÞ ¸ðÁÙ
+Summary(no):	Perlmodul LIBWWW
+Summary(pl):	Modu³ Perla LIBWWW
+Summary(pt):	Módulo de Perl LIBWWW
+Summary(pt_BR):	Módulo Perl LIBWWW
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl LIBWWW
+Summary(sv):	LIBWWW Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl LIBWWW
+Summary(zh_CN):	LIBWWW Perl Ä£¿é
 Name:		perl-libwww
 Version:	5.65
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
 BuildRequires:  perl(Net::FTP) >= 2.58
 BuildRequires:	perl-Digest-MD5
@@ -23,12 +40,12 @@ Obsoletes:	perl-libwww-perl
 %define	_noautoreq "perl(HTML::Parse)" "perl(HTML::FormatPS)" "perl(HTML::FormatText)" "perl(HTTP::GHTTP)" "perl(IO::Socket::SSL)" "perl(Mail::Internet)"
 
 %description
-Libwww-perl is a collection of Perl modules which provides a simple
-and consistent programming interface (API) to the World-Wide Web.
+LIBWWW is a collection of Perl modules which provides a simple and
+consistent programming interface (API) to the World-Wide Web.
 
 %description -l pl
-Libwww-perl jest kolekcj± modu³ów Perla, które dostaczaj± proste API
-do WWW (World-Wide Web).
+LIBWWW jest kolekcj± modu³ów Perla, które dostaczaj± proste API do
+WWW (World-Wide Web).
 
 %prep
 %setup -q -n libwww-perl-%{version}
