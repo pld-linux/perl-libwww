@@ -1,7 +1,7 @@
-
+#
 # Conditional build:
 %bcond_with	tests	# perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	WWW
 %define		pnam	libwww-perl
@@ -10,8 +10,8 @@ Summary(pl):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
 Version:	5.79
 Release:	1
-# same as Perl
-License:	GPL or Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	6682a0a532bf0b2cf76259c94d0d8dc4
