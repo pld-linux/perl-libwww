@@ -2,23 +2,24 @@
 Summary:        Perl LIBWWW module
 Summary(pl):    Modu³ perla LIBWWW
 Name:		perl-libwww
-Version:	5.44
-Release:	6
-Copyright:	GPL
+Version:	5.47
+Release:	1
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:         libwww-perl-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq    perl
-BuildRequires:	perl-Crypt-SSLeay
 BuildRequires:	perl-Digest-MD5
+BuildRequires:	perl-HTML-Format
 BuildRequires:	perl-HTML-Parser
 BuildRequires:	perl-HTML-Tree
 BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-MailTools
 BuildRequires:	perl-URI
 BuildRequires:	perl-libnet
+BuildRequires:	perl-IO-Socket-SSL
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:      /tmp/%{name}-%{version}-root
@@ -60,6 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/*.pod
 %{perl_sitelib}/Bundle/*
 %{perl_sitelib}/File/*
+%{perl_sitelib}/HTML/*
 %{perl_sitelib}/HTTP/*
 %{perl_sitelib}/LWP
 %{perl_sitelib}/WWW
