@@ -1,25 +1,14 @@
+#
+# Conditional build:
+# _with_tests - perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	WWW
 %define		pnam	libwww-perl
-Summary:	LIBWWW Perl module
-Summary(cs):	Modul LIBWWW pro Perl
-Summary(da):	Perlmodul LIBWWW
-Summary(de):	LIBWWW Perl Modul
-Summary(es):	Módulo de Perl LIBWWW
-Summary(fr):	Module Perl LIBWWW
-Summary(it):	Modulo di Perl LIBWWW
-Summary(ja):	LIBWWW Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	LIBWWW ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul LIBWWW
-Summary(pl):	Modu³ Perla LIBWWW
-Summary(pt):	Módulo de Perl LIBWWW
-Summary(pt_BR):	Módulo Perl LIBWWW
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl LIBWWW
-Summary(sv):	LIBWWW Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl LIBWWW
-Summary(zh_CN):	LIBWWW Perl Ä£¿é
+Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
+Summary(pl):	libwww-perl - prosty i logiczny API do WWW 
 Name:		perl-libwww
-Version:	5.66
+Version:	5.68
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -40,12 +29,19 @@ Obsoletes:	perl-libwww-perl
 %define	_noautoreq "perl(HTML::Parse)" "perl(HTML::FormatPS)" "perl(HTML::FormatText)" "perl(HTTP::GHTTP)" "perl(IO::Socket::SSL)" "perl(Mail::Internet)" "perl(Authen::NTLM)"
 
 %description
-LIBWWW is a collection of Perl modules which provides a simple and
-consistent programming interface (API) to the World-Wide Web.
+The libwww-perl collection is a set of Perl modules which provides a
+simple and consistent application programming interface to the World-Wide
+Web. The main focus of the library is to provide classes and functions
+that allow you to write WWW clients. The library also contain modules
+that are of more general use and even classes that help you implement
+simple HTTP servers.
 
 %description -l pl
-LIBWWW jest kolekcj± modu³ów Perla, które dostaczaj± proste API do
-WWW (World-Wide Web).
+libwww-perl jest zbiorem modu³ów Perla, dostarczaj±cych prostego API
+do WWW (World-Wide Web). G³ównym zadaniem biblioteki jest udostêpnianie
+klas i funkcji, pozwalaj±cych na pisanie klientów WWW. Biblioteka zawiera
+tak¿e modu³y bardziej ogólnego przeznaczenia, a nawet klasy, pozwalaj±ce
+na implementacjê prostego serwera HTTP.
 
 %prep
 %setup -q -n libwww-perl-%{version}
@@ -53,6 +49,8 @@ WWW (World-Wide Web).
 %build
 perl Makefile.PL </dev/null
 %{__make}
+
+%{?_with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -64,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README TODO
+%doc README*
 %{perl_sitelib}/*.pm
 %{perl_sitelib}/File/*
 %{perl_sitelib}/HTML/*
