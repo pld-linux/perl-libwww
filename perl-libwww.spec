@@ -1,17 +1,19 @@
 %define name perl-libwww
-%define version 5.35
+%define version 5.43
 %define release 1
 %define builddir $RPM_BUILD_DIR/libwww-perl-5.35
 Name:		%{name}
 Version:	%{version}
 Release:	1
 Vendor:		Mailing List <libwww-perl@ics.uci.edu>
-Source:         libwww-perl-5.35.tar.gz
+Source:         libwww-perl-5.43.tar.gz
 Patch0:		Makefile.patch
 Group:		Utilities/Text
 Copyright:	Free
 Summary:	Perl LIBWWW module
 BuildRoot:	/var/tmp/perl-libwww-root
+BuildPreReq:	perl
+Requires:	perl
 Requires:	perl-HTML-Parser, perl-MIME-Base64, perl-MD5, perl-libnet, perl-Data-Dumper
 
 %description
@@ -23,7 +25,7 @@ and consistent programming interface (API) to the World-Wide Web.
 - initial RPM release
 
 %prep
-%setup -n libwww-perl-5.35
+%setup -n libwww-perl-5.43
 
 %build
 perl Makefile.PL
