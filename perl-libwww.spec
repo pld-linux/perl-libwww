@@ -7,6 +7,7 @@ Source:         libwww-perl-%{version}.tar.gz
 Group:		Utilities/Text
 Copyright:	Free
 Summary:	Perl LIBWWW module
+Summary(pl):	Modu³ perla LIBWWW
 BuildRoot:	/tmp/%{name}-%{version}-root
 BuildRequires:	perl
 %requires_eq	perl
@@ -15,6 +16,10 @@ Requires:	perl-HTML-Parser, perl-MIME-Base64, perl-MD5, perl-libnet, perl-Data-D
 %description
 Libwww-perl is a collection of Perl modules which provides a simple
 and consistent programming interface (API) to the World-Wide Web.
+
+%description -l pl
+Libwww-perl jest kolekcj± modu³ów Perla, które dostaczaj± proste
+API do WWW (World-Wide Web).
 
 %prep
 %setup -q -n libwww-perl-%{version}
