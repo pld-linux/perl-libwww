@@ -20,7 +20,7 @@ BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-HTML-Parser >= 3.33
 BuildRequires:	perl-MIME-Base64 >= 2.1
 BuildRequires:	perl-URI >= 1.10
-BuildRequires:	perl-devel >= 5.8
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-libnet
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
