@@ -20,10 +20,6 @@ Requires:	perl-HTML-Parser, perl-MIME-Base64, perl-MD5, perl-libnet, perl-Data-D
 Libwww-perl is a collection of Perl modules which provides a simple
 and consistent programming interface (API) to the World-Wide Web.
 
-%changelog
-* Thu Jul 23 1998 Arkadiusz Mi¶kiewicz <misiek@misiek.eu.org>
-- initial RPM release
-
 %prep
 %setup -n libwww-perl-5.43
 
