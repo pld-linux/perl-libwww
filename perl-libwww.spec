@@ -20,7 +20,7 @@ Summary(uk):	Модуль для Perl LIBWWW
 Summary(zh_CN):	LIBWWW Perl дё©И
 Name:		perl-libwww
 Version:	5.66
-Release:	5
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
@@ -37,7 +37,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	perl-libwww-perl
 
 # modules not always required
-%define	_noautoreq "perl(HTML::Parse)" "perl(HTML::FormatPS)" "perl(HTML::FormatText)" "perl(HTTP::GHTTP)" "perl(IO::Socket::SSL)" "perl(Mail::Internet)"
+%define	_noautoreq "perl(HTML::Parse)" "perl(HTML::FormatPS)" "perl(HTML::FormatText)" "perl(HTTP::GHTTP)" "perl(IO::Socket::SSL)" "perl(Mail::Internet)" "perl(Authen::NTLM)"
 
 %description
 LIBWWW is a collection of Perl modules which provides a simple and
