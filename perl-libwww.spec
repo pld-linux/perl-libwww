@@ -19,7 +19,7 @@ Summary(sv):	LIBWWW Perlmodul
 Summary(uk):	Модуль для Perl LIBWWW
 Summary(zh_CN):	LIBWWW Perl дё©И
 Name:		perl-libwww
-Version:	5.65
+Version:	5.66
 Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
