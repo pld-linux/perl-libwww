@@ -20,7 +20,7 @@ Summary(uk):	Модуль для Perl LIBWWW
 Summary(zh_CN):	LIBWWW Perl дё©И
 Name:		perl-libwww
 Version:	5.65
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
@@ -52,7 +52,7 @@ WWW (World-Wide Web).
 
 %build
 perl Makefile.PL </dev/null
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -74,4 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/WWW/*
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{_mandir}/man3/*
+%{_mandir}/man3/[^B]*
