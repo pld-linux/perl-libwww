@@ -1,7 +1,7 @@
-#
+
 # Conditional build:
-# _with_tests - perform "make test"
-#
+%bcond_with	tests	# perform "make test"
+
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	WWW
 %define		pnam	libwww-perl
@@ -52,7 +52,7 @@ na implementacjê prostego serwera HTTP.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
