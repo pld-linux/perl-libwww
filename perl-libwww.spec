@@ -13,6 +13,7 @@ Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
+# Source0-md5: b4567b6fae2b1733415a746956826e0c
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:  perl(Net::FTP) >= 2.58
 BuildRequires:	perl-Digest-MD5
