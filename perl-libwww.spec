@@ -22,7 +22,7 @@ BuildRequires:	perl-libnet
 BuildRequires:	perl-IO-Socket-SSL
 %requires_eq	perl
 Requires:	%{perl_sitearch}
-BuildRoot:      /tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Libwww-perl is a collection of Perl modules which provides a simple
