@@ -1,5 +1,5 @@
 Name:		perl-libwww
-Version:	5.43
+Version:	5.44
 Release:	1
 Vendor:		Mailing List <libwww-perl@ics.uci.edu>
 Source:         libwww-perl-%{version}.tar.gz
