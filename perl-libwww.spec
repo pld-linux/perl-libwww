@@ -9,7 +9,6 @@ Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
-Patch0: perl-libwww-rpmperl-automation-workaround.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.6
 %requires_eq    perl
@@ -22,6 +21,9 @@ BuildRequires:	perl-libnet
 Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# modules not always required
+%define	_noautoreq "perl(HTML::Parse)" "perl(HTML::FormatPS)" "perl(HTML::FormatText)" "perl(HTTP::GHTTP)" "perl(IO::Socket::SSL)" "perl(Mail::Internet)"
+
 %description
 Libwww-perl is a collection of Perl modules which provides a simple
 and consistent programming interface (API) to the World-Wide Web.
@@ -32,8 +34,6 @@ do WWW (World-Wide Web).
 
 %prep
 %setup -q -n libwww-perl-%{version}
-%patch0 -p1
-
 
 %build
 perl Makefile.PL
