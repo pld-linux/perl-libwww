@@ -3,7 +3,7 @@ Summary:	Perl LIBWWW module
 Summary(pl):	Modu³ perla LIBWWW
 Name:		perl-libwww
 Version:	5.53
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
@@ -54,7 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %{perl_sitelib}/*.pm
 %{perl_sitelib}/*.pod
-%{perl_sitelib}/Bundle/*
 %{perl_sitelib}/File/*
 %{perl_sitelib}/HTML/*
 %{perl_sitelib}/HTTP/*
@@ -62,4 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/LWP
 %{perl_sitelib}/WWW
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man*/*
+%{_mandir}/man1/*
+%{_mandir}/man3/[FHLWl]*
