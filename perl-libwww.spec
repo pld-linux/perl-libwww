@@ -37,12 +37,12 @@ do WWW (World-Wide Web).
 
 %build
 perl Makefile.PL
-make OPTIMIZE="$RPM_OPT_FLAGS"
+%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 (  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/libwww-perl/
    sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
