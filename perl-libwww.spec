@@ -14,12 +14,12 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	b4567b6fae2b1733415a746956826e0c
-BuildRequires:	perl-devel >= 5.6
 BuildRequires:	perl(Net::FTP) >= 2.58
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-HTML-Parser
 BuildRequires:	perl-MIME-Base64
 BuildRequires:	perl-URI
+BuildRequires:	perl-devel >= 5.6
 BuildRequires:	perl-libnet
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -27,7 +27,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	perl-libwww-perl
 
 # modules not always required
-%define	_noautoreq "perl(HTML::Parse)" "perl(HTML::FormatPS)" "perl(HTML::FormatText)" "perl(HTTP::GHTTP)" "perl(IO::Socket::SSL)" "perl(Mail::Internet)" "perl(Authen::NTLM)"
+%define	_noautoreq 'perl(HTML::Parse)' 'perl(HTML::FormatPS)' 'perl(HTML::FormatText)' 'perl(HTTP::GHTTP)' 'perl(IO::Socket::SSL)' 'perl(Mail::Internet)' 'perl(Authen::NTLM)'
 
 %description
 The libwww-perl collection is a set of Perl modules which provides a
@@ -57,7 +57,8 @@ na implementacjê prostego serwera HTTP.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -74,4 +75,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/WWW/*
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{_mandir}/man3/[^B]*
+%{_mandir}/man3/[!B]*
