@@ -2,7 +2,7 @@
 
 Name:		perl-libwww
 Version:	5.44
-Release:	3
+Release:	4
 Vendor:		Mailing List <libwww-perl@ics.uci.edu>
 Source:         libwww-perl-%{version}.tar.gz
 Group:		Utilities/Text
@@ -13,12 +13,14 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-HTML-Parser
+BuildRequires:	perl-URI
 Requires:	perl
 Requires:	%{perl_sitelib}
 Requires:	perl-HTML-Parser 
 Requires:	perl-MIME-Base64
 Requires:	perl-Digest-MD5 
 Requires:	perl-libnet 
+Requires:	perl-URI
 
 %description
 Libwww-perl is a collection of Perl modules which provides a simple
