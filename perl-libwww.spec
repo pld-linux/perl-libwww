@@ -3,25 +3,21 @@ Summary:	Perl LIBWWW module
 Summary(pl):	Modu³ perla LIBWWW
 Name:		perl-libwww
 Version:	5.50
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
+Patch0: perl-libwww-rpmperl-automation-workaround.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.6
 %requires_eq    perl
 BuildRequires:	perl-Digest-MD5
-BuildRequires:	perl-HTML-Format
-BuildRequires:	perl-HTTP-GHTTP
 BuildRequires:	perl-HTML-Parser
-BuildRequires:	perl-HTML-Tree
 BuildRequires:	perl-MIME-Base64
-BuildRequires:	perl-MailTools
 BuildRequires:	perl-URI
 BuildRequires:	perl-libnet
-BuildRequires:	perl-IO-Socket-SSL
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,6 +32,8 @@ do WWW (World-Wide Web).
 
 %prep
 %setup -q -n libwww-perl-%{version}
+%patch0 -p1
+
 
 %build
 perl Makefile.PL
