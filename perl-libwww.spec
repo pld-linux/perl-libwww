@@ -9,7 +9,7 @@ Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
 Version:	5.803
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
