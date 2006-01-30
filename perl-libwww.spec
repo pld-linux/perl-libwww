@@ -8,13 +8,13 @@
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	5.803
-Release:	3
+Version:	5.805
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
-# Source0-md5:	3345d5f15a4f42350847254141725c8f
+# Source0-md5:	db1eb693eee45d251966ad2bab49dbbf
 URL:		http://search.cpan.org/dist/libwww-perl/
 BuildRequires:	perl(Net::FTP) >= 2.58
 BuildRequires:	perl-Digest-MD5
