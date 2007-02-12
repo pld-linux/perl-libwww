@@ -6,7 +6,7 @@
 %define		pdir	WWW
 %define		pnam	libwww-perl
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
-Summary(pl):	libwww-perl - prosty i logiczny API do WWW
+Summary(pl.UTF-8):   libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
 Version:	5.805
 Release:	1
@@ -39,12 +39,12 @@ that allow you to write WWW clients. The library also contain modules
 that are of more general use and even classes that help you implement
 simple HTTP servers.
 
-%description -l pl
-libwww-perl jest zbiorem modu³ów Perla, dostarczaj±cych prostego API
-do WWW (World-Wide Web). G³ównym zadaniem biblioteki jest udostêpnianie
-klas i funkcji, pozwalaj±cych na pisanie klientów WWW. Biblioteka zawiera
-tak¿e modu³y bardziej ogólnego przeznaczenia, a nawet klasy, pozwalaj±ce
-na implementacjê prostego serwera HTTP.
+%description -l pl.UTF-8
+libwww-perl jest zbiorem moduÅ‚Ã³w Perla, dostarczajÄ…cych prostego API
+do WWW (World-Wide Web). GÅ‚Ã³wnym zadaniem biblioteki jest udostÄ™pnianie
+klas i funkcji, pozwalajÄ…cych na pisanie klientÃ³w WWW. Biblioteka zawiera
+takÅ¼e moduÅ‚y bardziej ogÃ³lnego przeznaczenia, a nawet klasy, pozwalajÄ…ce
+na implementacjÄ™ prostego serwera HTTP.
 
 %prep
 %setup -q -n libwww-perl-%{version}
