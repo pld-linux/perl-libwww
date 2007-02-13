@@ -6,7 +6,7 @@
 %define		pdir	WWW
 %define		pnam	libwww-perl
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
-Summary(pl.UTF-8):   libwww-perl - prosty i logiczny API do WWW
+Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
 Version:	5.805
 Release:	1
