@@ -1,0 +1,5 @@
+- added workaround for rpm automation (some modules are NOT required for using
+  this module!!!)
+- removed several "BuildRequires" from spec. please. don't be smarter than
+  author of the module. the module works just fine with shorter list of
+  dependencies.
