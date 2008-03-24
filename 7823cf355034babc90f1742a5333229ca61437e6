@@ -1,0 +1,3 @@
+- removed .pod and %{perl_sitelib}/Bundle/* files
+- %{perl_sitelib}/WWW dir moved to perl
+- release 3
