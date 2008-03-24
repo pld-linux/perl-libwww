@@ -9,7 +9,7 @@ Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
 Version:	5.808
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -24,6 +24,7 @@ BuildRequires:	perl-URI >= 1.10
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-libnet
 BuildRequires:	rpm-perlprov >= 4.1-13
+Suggests:	perl-IO-Socket-SSL
 Obsoletes:	perl-libwww-perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
