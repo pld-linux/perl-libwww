@@ -24,27 +24,27 @@ BuildRequires:	perl-URI >= 1.10
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-libnet
 BuildRequires:	rpm-perlprov >= 4.1-13
+Obsoletes:	perl-libwww-perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	perl-libwww-perl
 
 # modules not always required
 %define	_noautoreq 'perl(HTML::Parse)' 'perl(HTML::FormatPS)' 'perl(HTML::FormatText)' 'perl(HTTP::GHTTP)' 'perl(IO::Socket::SSL)' 'perl(Mail::Internet)' 'perl(Authen::NTLM)'
 
 %description
 The libwww-perl collection is a set of Perl modules which provides a
-simple and consistent application programming interface to the World-Wide
-Web. The main focus of the library is to provide classes and functions
-that allow you to write WWW clients. The library also contain modules
-that are of more general use and even classes that help you implement
-simple HTTP servers.
+simple and consistent application programming interface to the
+World-Wide Web. The main focus of the library is to provide classes
+and functions that allow you to write WWW clients. The library also
+contain modules that are of more general use and even classes that
+help you implement simple HTTP servers.
 
 %description -l pl.UTF-8
 libwww-perl jest zbiorem modułów Perla, dostarczających prostego API
-do WWW (World-Wide Web). Głównym zadaniem biblioteki jest udostępnianie
-klas i funkcji, pozwalających na pisanie klientów WWW. Biblioteka zawiera
-także moduły bardziej ogólnego przeznaczenia, a nawet klasy, pozwalające
-na implementację prostego serwera HTTP.
+do WWW (World-Wide Web). Głównym zadaniem biblioteki jest
+udostępnianie klas i funkcji, pozwalających na pisanie klientów WWW.
+Biblioteka zawiera także moduły bardziej ogólnego przeznaczenia, a
+nawet klasy, pozwalające na implementację prostego serwera HTTP.
 
 %prep
 %setup -q -n libwww-perl-%{version}
