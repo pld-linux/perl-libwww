@@ -13,7 +13,7 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/WWW/%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/WWW/GAAS/%{pnam}-%{version}.tar.gz
 # Source0-md5:	424325417ed5a85700e604317872b588
 URL:		http://search.cpan.org/dist/libwww-perl/
 BuildRequires:	perl(Net::FTP) >= 2.58
