@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	tests	# perform "make test"
+%bcond_with	tests	# perform "make test" (uses network)
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	WWW
@@ -8,29 +8,52 @@
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	5.837
+Version:	6.01
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/WWW/GAAS/%{pnam}-%{version}.tar.gz
-# Source0-md5:	9bbf1bce482b0bac98bb4f04253c03d0
+# Source0-md5:	817d1c087d4c5bb76781c06d9bed9ed0
 URL:		http://search.cpan.org/dist/libwww-perl/
+BuildRequires:	perl-devel >= 1:5.8.8
+BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
 BuildRequires:	perl(Net::FTP) >= 2.58
 BuildRequires:	perl-Digest-MD5
+BuildRequires:	perl-Encode >= 2.12
+BuildRequires:	perl-Encode-Locale
+BuildRequires:	perl-File-Listing >= 6
 BuildRequires:	perl-HTML-Parser >= 3.33
+BuildRequires:	perl-HTTP-Cookies >= 6
+BuildRequires:	perl-HTTP-Daemon >= 6
+BuildRequires:	perl-HTTP-Date >= 6
+BuildRequires:	perl-HTTP-Message >= 6
+BuildRequires:	perl-HTTP-Negotiate >= 6
+BuildRequires:	perl-LWP-MediaTypes >= 6
 BuildRequires:	perl-MIME-Base64 >= 2.1
+BuildRequires:	perl-Net-HTTP >= 6
 BuildRequires:	perl-URI >= 1.10
-BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-WWW-RobotRules >= 6
 BuildRequires:	perl-libnet
-BuildRequires:	rpm-perlprov >= 4.1-13
-Suggests:	perl-IO-Socket-SSL
+%endif
+Requires:	perl-File-Listing >= 6
+Requires:	perl-HTTP-Cookies >= 6
+Requires:	perl-HTTP-Daemon >= 6
+Requires:	perl-HTTP-Date >= 6
+Requires:	perl-HTTP-Message >= 6
+Requires:	perl-HTTP-Negotiate >= 6
+Requires:	perl-LWP-MediaTypes >= 6
+Requires:	perl-MIME-Base64 >= 2.1
+Requires:	perl-Net-HTTP >= 6
+Requires:	perl-URI >= 1.10
+Requires:	perl-WWW-RobotRules >= 6
 Obsoletes:	perl-libwww-perl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # modules not always required
-%define	_noautoreq 'perl(HTML::Parse)' 'perl(HTML::FormatPS)' 'perl(HTML::FormatText)' 'perl(HTTP::GHTTP)' 'perl(IO::Socket::SSL)' 'perl(Mail::Internet)' 'perl(Authen::NTLM)'
+%define	_noautoreq 'perl(HTTP::GHTTP)' 'perl(Authen::NTLM)'
 
 %description
 The libwww-perl collection is a set of Perl modules which provides a
@@ -60,7 +83,7 @@ yes | %{__perl} Makefile.PL \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 for file in GET HEAD POST; do
@@ -69,19 +92,33 @@ for file in GET HEAD POST; do
 	echo '.so lwp-request.1p' > $RPM_BUILD_ROOT%{_mandir}/man1/$file.1p
 done
 
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/*.pod
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README*
-%{perl_vendorlib}/*.pm
-%{perl_vendorlib}/File/*
-%{perl_vendorlib}/HTML/*
-%{perl_vendorlib}/HTTP/*
-%{perl_vendorlib}/Net/*
-%{perl_vendorlib}/LWP
-%{perl_vendorlib}/WWW/*
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
-%{_mandir}/man3/[!B]*
+%doc Changes README*
+%attr(755,root,root) %{_bindir}/GET
+%attr(755,root,root) %{_bindir}/HEAD
+%attr(755,root,root) %{_bindir}/POST
+%attr(755,root,root) %{_bindir}/lwp-*
+%{perl_vendorlib}/LWP.pm
+%{perl_vendorlib}/LWP/Authen
+%{perl_vendorlib}/LWP/ConnCache.pm
+%{perl_vendorlib}/LWP/Debug.pm
+%{perl_vendorlib}/LWP/DebugFile.pm
+%{perl_vendorlib}/LWP/MemberMixin.pm
+%{perl_vendorlib}/LWP/Protocol.pm
+%{perl_vendorlib}/LWP/Protocol
+%{perl_vendorlib}/LWP/RobotUA.pm
+%{perl_vendorlib}/LWP/Simple.pm
+%{perl_vendorlib}/LWP/UserAgent.pm
+%{_mandir}/man1/GET.1p*
+%{_mandir}/man1/HEAD.1p*
+%{_mandir}/man1/POST.1p*
+%{_mandir}/man1/lwp-*.1p*
+%{_mandir}/man3/LWP*.3pm*
+%{_mandir}/man3/lwpcook.3pm*
+%{_mandir}/man3/lwptut.3pm*
