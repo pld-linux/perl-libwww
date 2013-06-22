@@ -8,16 +8,17 @@
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	6.04
+Version:	6.05
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/WWW/GAAS/%{pnam}-%{version}.tar.gz
-# Source0-md5:	24acf2fe33b2295f048f8859e9665ee3
+# Source0-md5:	637d5f1eb61336ca2caa6e026b382f87
 URL:		http://search.cpan.org/dist/libwww-perl/
 BuildRequires:	perl-devel >= 1:5.8.8
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.663
 %if %{with tests}
 BuildRequires:	perl(Net::FTP) >= 2.58
 BuildRequires:	perl-Digest-MD5
@@ -32,7 +33,7 @@ BuildRequires:	perl-HTTP-Message >= 6
 BuildRequires:	perl-HTTP-Negotiate >= 6
 BuildRequires:	perl-LWP-MediaTypes >= 6
 BuildRequires:	perl-MIME-Base64 >= 2.1
-BuildRequires:	perl-Net-HTTP >= 6
+BuildRequires:	perl-Net-HTTP >= 6.04
 BuildRequires:	perl-URI >= 1.10
 BuildRequires:	perl-WWW-RobotRules >= 6
 BuildRequires:	perl-libnet
@@ -45,7 +46,7 @@ Requires:	perl-HTTP-Message >= 6
 Requires:	perl-HTTP-Negotiate >= 6
 Requires:	perl-LWP-MediaTypes >= 6
 Requires:	perl-MIME-Base64 >= 2.1
-Requires:	perl-Net-HTTP >= 6
+Requires:	perl-Net-HTTP >= 6.04
 Requires:	perl-URI >= 1.10
 Requires:	perl-WWW-RobotRules >= 6
 Obsoletes:	perl-libwww-perl
@@ -53,7 +54,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # modules not always required
-%define	_noautoreq 'perl(HTTP::GHTTP)' 'perl(Authen::NTLM)'
+%define	_noautoreq_perl	HTTP::GHTTP Authen::NTLM
 
 %description
 The libwww-perl collection is a set of Perl modules which provides a
