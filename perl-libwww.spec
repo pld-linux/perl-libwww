@@ -8,13 +8,13 @@
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	6.15
+Version:	6.35
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/%{pnam}-%{version}.tar.gz
-# Source0-md5:	6888c9d8728cd6f3ea3c9754461c9f94
+# Source0-md5:	19cd0f55f61359c973caa9301ec405bd
 URL:		http://search.cpan.org/dist/libwww-perl/
 BuildRequires:	perl-devel >= 1:5.8.8
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -93,8 +93,6 @@ for file in GET HEAD POST; do
 	echo '.so lwp-request.1p' > $RPM_BUILD_ROOT%{_mandir}/man1/$file.1p
 done
 
-%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/*.pod
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -109,6 +107,8 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/LWP/Authen
 %{perl_vendorlib}/LWP/ConnCache.pm
 %{perl_vendorlib}/LWP/Debug.pm
+%dir %{perl_vendorlib}/LWP/Debug
+%{perl_vendorlib}/LWP/Debug/TraceHTTP.pm
 %{perl_vendorlib}/LWP/DebugFile.pm
 %{perl_vendorlib}/LWP/MemberMixin.pm
 %{perl_vendorlib}/LWP/Protocol.pm
@@ -121,5 +121,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/POST.1p*
 %{_mandir}/man1/lwp-*.1p*
 %{_mandir}/man3/LWP*.3pm*
-%{_mandir}/man3/lwpcook.3pm*
-%{_mandir}/man3/lwptut.3pm*
+%{_mandir}/man3/libwww::lwpcook.3pm*
+%{_mandir}/man3/libwww::lwptut.3pm*
