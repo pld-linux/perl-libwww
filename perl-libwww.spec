@@ -89,9 +89,9 @@ rm -rf $RPM_BUILD_ROOT
 
 for file in GET HEAD POST; do
 	ln -sf lwp-request $RPM_BUILD_ROOT%{_bindir}/$file
-	rm -f $RPM_BUILD_ROOT%{_mandir}/man1/$file.1p
 	echo '.so lwp-request.1p' > $RPM_BUILD_ROOT%{_mandir}/man1/$file.1p
 done
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/libwww/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
