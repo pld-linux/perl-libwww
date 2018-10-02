@@ -34,6 +34,9 @@ BuildRequires:	perl-HTTP-Negotiate >= 6
 BuildRequires:	perl-LWP-MediaTypes >= 6
 BuildRequires:	perl-MIME-Base64 >= 2.1
 BuildRequires:	perl-Net-HTTP >= 6.04
+BuildRequires:	perl-Test-Needs
+BuildRequires:	perl-Test-RequiresInternet
+BuildRequires:	perl-Test-Simple
 BuildRequires:	perl-URI >= 1.10
 BuildRequires:	perl-WWW-RobotRules >= 6
 BuildRequires:	perl-libnet
