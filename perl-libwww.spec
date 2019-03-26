@@ -8,13 +8,13 @@
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	6.35
+Version:	6.38
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/%{pnam}-%{version}.tar.gz
-# Source0-md5:	19cd0f55f61359c973caa9301ec405bd
+Source0:	http://search.cpan.org/CPAN/authors/id/O/OA/OALDERS/%{pnam}-%{version}.tar.gz
+# Source0-md5:	db69a100747c8a9693f7d61d20ae354c
 URL:		http://search.cpan.org/dist/libwww-perl/
 BuildRequires:	perl-devel >= 1:5.8.8
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -33,7 +33,7 @@ BuildRequires:	perl-HTTP-Message >= 6
 BuildRequires:	perl-HTTP-Negotiate >= 6
 BuildRequires:	perl-LWP-MediaTypes >= 6
 BuildRequires:	perl-MIME-Base64 >= 2.1
-BuildRequires:	perl-Net-HTTP >= 6.04
+BuildRequires:	perl-Net-HTTP >= 6.18
 BuildRequires:	perl-Test-Needs
 BuildRequires:	perl-Test-RequiresInternet
 BuildRequires:	perl-Test-Simple
@@ -49,7 +49,7 @@ Requires:	perl-HTTP-Message >= 6
 Requires:	perl-HTTP-Negotiate >= 6
 Requires:	perl-LWP-MediaTypes >= 6
 Requires:	perl-MIME-Base64 >= 2.1
-Requires:	perl-Net-HTTP >= 6.04
+Requires:	perl-Net-HTTP >= 6.18
 Requires:	perl-URI >= 1.10
 Requires:	perl-WWW-RobotRules >= 6
 Obsoletes:	perl-libwww-perl
