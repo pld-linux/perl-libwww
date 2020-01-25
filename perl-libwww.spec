@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (uses network)
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	WWW
 %define		pnam	libwww-perl
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
