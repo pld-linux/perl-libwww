@@ -12,12 +12,13 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/O/OA/OALDERS/%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/authors/id/O/OA/OALDERS/%{pnam}-%{version}.tar.gz
 # Source0-md5:	86601652f46b924a26acecad0fe5c110
-URL:		http://search.cpan.org/dist/libwww-perl/
+URL:		https://metacpan.org/release/libwww-perl
+BuildRequires:	perl-CPAN-Meta-Requirements >= 2.120_620
 BuildRequires:	perl-devel >= 1:5.8.8
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	rpmbuild(macros) >= 1.663
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl(Net::FTP) >= 2.58
 BuildRequires:	perl-Digest-MD5
@@ -28,11 +29,12 @@ BuildRequires:	perl-HTML-Parser >= 3.33
 BuildRequires:	perl-HTTP-Cookies >= 6
 BuildRequires:	perl-HTTP-Daemon >= 6
 BuildRequires:	perl-HTTP-Date >= 6
-BuildRequires:	perl-HTTP-Message >= 6
+BuildRequires:	perl-HTTP-Message >= 6.07
 BuildRequires:	perl-HTTP-Negotiate >= 6
 BuildRequires:	perl-LWP-MediaTypes >= 6
 BuildRequires:	perl-MIME-Base64 >= 2.1
 BuildRequires:	perl-Net-HTTP >= 6.18
+BuildRequires:	perl-Test-Fatal
 BuildRequires:	perl-Test-Needs
 BuildRequires:	perl-Test-RequiresInternet
 BuildRequires:	perl-Test-Simple
@@ -103,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README*
+%doc Changes README.SSL
 %attr(755,root,root) %{_bindir}/GET
 %attr(755,root,root) %{_bindir}/HEAD
 %attr(755,root,root) %{_bindir}/POST
