@@ -7,13 +7,13 @@
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	6.52
+Version:	6.53
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/authors/id/O/OA/OALDERS/%{pnam}-%{version}.tar.gz
-# Source0-md5:	7b5959aff7b11509bd87fa1de753f127
+# Source0-md5:	33fdb6415018b8bf94242cace1b06479
 URL:		https://metacpan.org/release/libwww-perl
 BuildRequires:	perl-CPAN-Meta-Requirements >= 2.120_620
 BuildRequires:	perl-devel >= 1:5.8.8
@@ -27,7 +27,7 @@ BuildRequires:	perl-Encode-Locale
 BuildRequires:	perl-File-Listing >= 6
 BuildRequires:	perl-HTML-Parser >= 3.33
 BuildRequires:	perl-HTTP-Cookies >= 6
-BuildRequires:	perl-HTTP-Daemon >= 6
+BuildRequires:	perl-HTTP-Daemon >= 6.12
 BuildRequires:	perl-HTTP-Date >= 6
 BuildRequires:	perl-HTTP-Message >= 6.07
 BuildRequires:	perl-HTTP-Negotiate >= 6
@@ -44,7 +44,7 @@ BuildRequires:	perl-libnet
 %endif
 Requires:	perl-File-Listing >= 6
 Requires:	perl-HTTP-Cookies >= 6
-Requires:	perl-HTTP-Daemon >= 6
+Requires:	perl-HTTP-Daemon >= 6.12
 Requires:	perl-HTTP-Date >= 6
 Requires:	perl-HTTP-Message >= 6
 Requires:	perl-HTTP-Negotiate >= 6
