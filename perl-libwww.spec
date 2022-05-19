@@ -56,7 +56,7 @@ Requires:	perl-WWW-RobotRules >= 6
 Provides:	perl(LWP::Debug::TraceHTTP::Socket) = %{version}
 Provides:	perl(LWP::Protocol::http::Socket) = %{version}
 Provides:	perl(LWP::Protocol::http::SocketMethods) = %{version}
-Obsoletes:	perl-libwww-perl
+Obsoletes:	perl-libwww-perl < 6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -98,7 +98,7 @@ for file in GET HEAD POST; do
 	ln -sf lwp-request $RPM_BUILD_ROOT%{_bindir}/$file
 	echo '.so lwp-request.1p' > $RPM_BUILD_ROOT%{_mandir}/man1/$file.1p
 done
-%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/libwww/*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -128,5 +128,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/POST.1p*
 %{_mandir}/man1/lwp-*.1p*
 %{_mandir}/man3/LWP*.3pm*
-%{_mandir}/man3/libwww::lwpcook.3pm*
-%{_mandir}/man3/libwww::lwptut.3pm*
+%{_mandir}/man3/lwpcook.3pm*
+%{_mandir}/man3/lwptut.3pm*
