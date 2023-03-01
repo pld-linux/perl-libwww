@@ -7,13 +7,13 @@
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	6.67
+Version:	6.68
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/authors/id/O/OA/OALDERS/%{pnam}-%{version}.tar.gz
-# Source0-md5:	ff7621d0350da3052f24db9a74692672
+# Source0-md5:	5f765cbde32c23ca0670e68ef74921e5
 URL:		https://metacpan.org/release/libwww-perl
 BuildRequires:	perl-CPAN-Meta-Requirements >= 2.120_620
 BuildRequires:	perl-devel >= 1:5.8.8
@@ -25,7 +25,7 @@ BuildRequires:	perl-Digest-MD5
 BuildRequires:	perl-Encode >= 2.12
 BuildRequires:	perl-Encode-Locale
 BuildRequires:	perl-File-Listing >= 6
-BuildRequires:	perl-HTML-Parser >= 3.33
+BuildRequires:	perl-HTML-Parser >= 3.71
 BuildRequires:	perl-HTTP-Cookies >= 6
 BuildRequires:	perl-HTTP-Daemon >= 6.12
 BuildRequires:	perl-HTTP-Date >= 6
@@ -43,6 +43,7 @@ BuildRequires:	perl-WWW-RobotRules >= 6
 BuildRequires:	perl-libnet
 %endif
 Requires:	perl-File-Listing >= 6
+Requires:	perl-HTML-Parser >= 3.71
 Requires:	perl-HTTP-Cookies >= 6
 Requires:	perl-HTTP-Daemon >= 6.12
 Requires:	perl-HTTP-Date >= 6
