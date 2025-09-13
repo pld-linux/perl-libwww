@@ -1,21 +1,22 @@
 #
 # Conditional build:
-%bcond_with	tests	# perform "make test" (uses network)
+%bcond_with	tests	# unit tests
 #
 %define		pdir	WWW
 %define		pnam	libwww-perl
 Summary:	libwww-perl - a simple and consistent API to the World-Wide Web
 Summary(pl.UTF-8):	libwww-perl - prosty i logiczny API do WWW
 Name:		perl-libwww
-Version:	6.79
+Version:	6.80
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	https://www.cpan.org/authors/id/O/OA/OALDERS/%{pnam}-%{version}.tar.gz
-# Source0-md5:	cc91563975e3c27f2cd7a750fa6f4126
-URL:		https://metacpan.org/release/libwww-perl
-BuildRequires:	perl-CPAN-Meta-Requirements >= 2.120_620
+Source0:	https://www.cpan.org/modules/by-module/LWP/%{pnam}-%{version}.tar.gz
+# Source0-md5:	4f9e6180b7d0b0dd099237fa29f54c55
+URL:		https://metacpan.org/dist/libwww-perl
+BuildRequires:	perl-CPAN-Meta-Requirements >= 2.120_900
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.8.8
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.745
@@ -29,7 +30,7 @@ BuildRequires:	perl-HTML-Parser >= 3.71
 BuildRequires:	perl-HTTP-Cookies >= 6
 BuildRequires:	perl-HTTP-Daemon >= 6.12
 BuildRequires:	perl-HTTP-Date >= 6
-BuildRequires:	perl-HTTP-Message >= 6.07
+BuildRequires:	perl-HTTP-Message >= 6.18
 BuildRequires:	perl-HTTP-Negotiate >= 6
 BuildRequires:	perl-LWP-MediaTypes >= 6
 BuildRequires:	perl-MIME-Base64 >= 2.1
@@ -47,7 +48,7 @@ Requires:	perl-HTML-Parser >= 3.71
 Requires:	perl-HTTP-Cookies >= 6
 Requires:	perl-HTTP-Daemon >= 6.12
 Requires:	perl-HTTP-Date >= 6
-Requires:	perl-HTTP-Message >= 6
+Requires:	perl-HTTP-Message >= 6.18
 Requires:	perl-HTTP-Negotiate >= 6
 Requires:	perl-LWP-MediaTypes >= 6
 Requires:	perl-MIME-Base64 >= 2.1
